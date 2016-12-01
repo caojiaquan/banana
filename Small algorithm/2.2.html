@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        function bb(num){
+            for(var i=0; i<num; i++){
+                for(var k=0; k<num - i; k++){
+                    document.write("&nbsp");
+                }
+                for(var j=0; j<i; j++){
+                    document.write("*&nbsp");
+                }
+//                for(var m=0; m<num - i; m++){
+//                    document.write(" ");
+//                }
+//
+                document.write("<br>");
+            }
+        }
+        bb(10);
+    </script>
+</body>
+</html>
