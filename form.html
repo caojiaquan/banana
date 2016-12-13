@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form</title>
+</head>
+<body>
+    <form action="">
+        用户名：<input type="text" name="username" value="" id="username"/><br>
+        密码：<input type="password"/><br>
+        性别：
+            男 <input type="radio" name="sex"/>
+            女 <input type="radio" name="sex"/><br>
+        爱好：
+            足球 <input type="checkbox" name="hobby"/>
+            篮球 <input type="checkbox" name="hobby"/>
+            排球 <input type="checkbox" name="hobby"/><br>
+        学校：
+        <select name="" id="">
+            <option value="">理工</option>
+            <option value="">黑大</option>
+            <option value="">林大</option>
+        </select>
+        提交： <input type="submit" name="sub" id="submit"/>
+    </form>
+
+    <script>
+        var oUsername = document.getElementById("username");
+        var oSubmit = document.getElementById("submit");
+        oSubmit.onclick = function(){
+            console.log({
+                 oUsername:oUsername.name.value
+
+                    });
+
+            return false;
+        }
+
+    </script>
+</body>
+</html>
