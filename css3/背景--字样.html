@@ -7,14 +7,16 @@
         #div{
             width: 400px;
             height: 400px;
-            border:1px solid #ff0000;
+            border:10px solid #ff0000;
+            padding:10px;
             background-image:url(../images/6.jpg);
             -webkit-background-origin:border-box;
             /*color:transparent;*/
             font-size:100px;
             text-align:center;
             line-height: 400px;
-            -webkit-background-clip: text;//兼容性问题
+            -webkit-background-clip:padding-box;
+            //兼容性问题
             /*-webkit-background-size:200px;*/
             background-size:cover;
         }
