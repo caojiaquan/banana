@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            perspective: 1000px;
+            perspective-origin: 50% -100%;
+        }
+        #container{
+            width: 125px;
+            height: 125px;
+            margin:200px auto;
+            position:relative;
+            transform-style:preserve-3d;
+            transition:transform 1s linear;
+
+        }
+        #container .img{
+            width: 125px;
+            height: 125px;
+            position:absolute;
+            transition:transform 1s ease;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+    <script>
+        var oContainer = document.getElementById("container");
+        var aImg = oContainer.getElementsByTagName("img");
+
+        var count = 0;
+        for(var i=0; i<9; i++){
+            var oImg = new Image();
+            oImg.onload = function(){
+                count++;
+                if(count == 9){
+                    loadSuccess();
+                }
+            };
+            oImg.src = ""+ (i+1) +".jpg";
+            oContainer.appendChild(oImg);
+
+        }
+        for(var i=0; i<9; i++){
+            aImg[i].className = "img";
+        }
+
+        function loadSuccess(){
+            var num = 0;
+            for(var i=0; i<9; i++){
+                aImg[i].style.transitionDelay = ""+ 0.5*i+ "s";
+                aImg[i].style.transform = "rotateY("+ 40*i +"deg)  translateZ(200px)";
+            }
+            oContainer.onclick = function(){
+                this.style.transform = "rotateY(" + 40*(num+1) + "deg)";
+                num++;
+            };
+
+        }
+
+    </script>
+</body>
+</html>
