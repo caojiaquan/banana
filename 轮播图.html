@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul, ol{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        img{
+            border: 0;
+        }
+
+        #container{
+            width: 680px;
+            height: 344px;
+            margin: 100px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        #tab{
+            position: absolute;
+            right: 20px;
+            bottom: 10px;
+            z-index: 9999;
+        }
+        #tab li{
+            width: 20px;
+            height: 20px;
+            float: left;
+            background: #000000;
+            color: #fff;
+            margin-right: 5px;
+            text-align: center;
+            line-height: 20px;
+            cursor: pointer;
+        }
+        #tab .selected{
+            background: orange;
+        }
+        #content{
+            position: relative;
+        }
+        #content img{
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        #arrow{
+            position: absolute;
+            left: 20px;
+            bottom: 10px;
+            z-index: 9999;
+        }
+        #arrow span{
+            width: 20px;
+            height: 20px;
+            background: #000000;
+            color: #fff;
+            text-align: center;
+            line-height: 20px;
+            float: left;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <ul id="tab">
+        <li class="selected">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <div id="content">
+        <img src="img/1.jpg" alt=""/>
+        <img src="img/2.jpg" alt=""/>
+        <img src="img/3.jpg" alt=""/>
+        <img src="img/4.jpg" alt=""/>
+    </div>
+    <div id="arrow">
+        <span id="prev" onselectstart="return false;">&lt;</span>
+        <span id="next" onselectstart="return false;">&gt;</span>
+    </div>
+</div>
+<script src="jquery-1.11.1.min.js"></script>
+<script>
+    var zIndex = $("#content img").length;
+    var index = 5;
+    var iNow = 0;
+
+
+    $("#tab li").on("click",function(){
+
+        $(this).addClass("selected").siblings().removeClass();
+        $("#content img").eq($(this).index()).css("opacity",0).css("zIndex",index).animate({
+            opacity:1
+        });
+        index++;
+        iNow = $(this).index();
+    });
+
+
+    $("#content img").each(function(index,elem){
+        $(this).css("z-index",zIndex--);
+    });
+    $("#prev").on("click",function(){
+        iNow--;
+        if(iNow == -1){
+            iNow=3;
+
+        }
+        $("#tab li").eq(iNow).trigger("click");
+
+    });
+    $("#next").on("click",function(){
+        iNow++;
+        console.log(iNow);
+        if(iNow==4){
+            iNow = 0;
+
+        }
+        $("#tab li").eq(iNow).trigger("click");
+
+    });
+
+
+
+    $("#tab li").on("click",function(){
+
+        $(this).addClass("selected").siblings().removeClass();
+        $("#content img").eq($(this).index()).css("opacity",0).css("zIndex",index).animate({
+            opacity:1
+        });
+        index++;
+        iNow = $(this).index();
+    });
+
+</script>
+</body>
+</html>
