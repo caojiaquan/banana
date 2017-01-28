@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        ul{
+            list-style:none;
+        }
+        a{
+            text-decoration: none;
+        }
+        #container{
+            width: 680px;
+            margin:50px auto;
+        }
+        #container img{
+            width: 200px;
+            height: 150px;
+            float:left;
+            margin:10px;
+        }
+        .selected{
+            border:1px solid #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img src="../images/1.jpg" alt=""/>
+        <img src="../images/2.jpg" alt=""/>
+        <img src="../images/3.jpg" alt=""/>
+        <img src="../images/4.jpg" alt=""/>
+        <img src="../images/5.jpg" alt=""/>
+        <img src="../images/6.jpg" alt=""/>
+        <img src="../images/7.jpg" alt=""/>
+        <img src="../images/8.jpg" alt=""/>
+        <img src="../images/9.jpg" alt=""/>
+    </div>
+    <script>
+        var oContainer = document.getElementById("container");
+        var aImg = oContainer.getElementsByTagName("img");
+        var zIndex = 9;
+        var aCollide = [];
+        var oNearest;
+        // 1. 布局转换
+        for(var i=0; i<aImg.length; i++){
+            aImg[i].style.left = aImg[i].offsetLeft + "px";
+            aImg[i].style.top = aImg[i].offsetTop + "px";
+        }
+        for(var i=0; i<aImg.length; i++){
+            aImg[i].style.position = "absolute";
+        }
+        // 2. 拖拽元素
+        for(var i=0; i<aImg.length; i++){
+            drag(aImg[i]);
+        }
+
+        /*
+        *   elem拖拽的目标元素
+        * */
+        function drag(elem){
+            elem.onmousedown = function(e){
+                elem.style.zIndex = zIndex++;
+                e = e || window.event;
+                var iLeft = e.clientX - elem.offsetLeft;
+                var iTop = e.clientY - elem.offsetTop;
+                document.onmousemove = function(e){
+                    e = e || window.event;
+                    elem.style.left = e.clientX - iLeft + "px";
+                    elem.style.top = e.clientY - iTop + "px";
+                    for(var i=0; i<aImg.length; i++){
+                        if(elem == aImg[i]){
+                            continue;
+                        }else{
+                            var collideResult = collide(elem,aImg[i]);
+                            aImg[i].className = "";
+                            if(collideResult){
+//                                aImg[i].className = "selected";
+                                aCollide.push(aImg[i]);
+//                                console.log(aCollide)
+
+                            }
+                        }
+
+                    }
+//                    console.log(aCollide.length);
+
+                    if(aCollide.length > 0){
+                        oNearest = getnearest(elem);
+                        oNearest.className = "selected";
+                    }
+                    aCollide = [];
+                };
+                elem.onmouseup = function(){
+                    document.onmousemove = null;
+                    elem.onmouseup = null;
+                };
+                return false;
+            }
+        }
+
+        function collide(elem,target){
+            var iTop = elem.offsetTop,
+                    iLeft = elem.offsetLeft,
+                    iRight = elem.offsetLeft + elem.offsetWidth,
+                    iBottom = elem.offsetHeight + elem.offsetTop;
+            var targetTop = target.offsetTop,
+                    targetLeft = target.offsetLeft,
+                    targetBottom = target.offsetTop + elem.offsetHeight,
+                    targetRight = target.offsetLeft + target.offsetWidth;
+            if(iTop > targetBottom || iBottom < targetTop || iLeft > targetRight || iRight < targetLeft){
+                return false;
+            }
+            return true;
+
+        }
+        function getnearest(elem){
+            var iMinest = 99999;
+            var iIndex;
+//            console.log(aCollide);
+            for(var i=0;  i<aCollide.length; i++){
+                var iDis = getMinest(elem,aCollide[i]);
+                if(iDis < iMinest){
+                    iMinest = iDis;
+                    iIndex = i;
+                }
+            }
+
+            return aCollide[iIndex];
+        }
+        function getMinest(elem,target){
+            var iLeft = target.offsetLeft - elem.offsetLeft;
+            var iTop = target.offsetTop - elem.offsetTop;
+            return Math.sqrt(iLeft*iLeft + iTop*iTop);
+            console.log(Math.sqrt(iLeft*iLeft + iTop*iTop));
+        }
+
+    </script>
+</body>
+</html>
