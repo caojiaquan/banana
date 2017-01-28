@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        window.onload = function(){
+            alert(111);
+        };
+        window.onload = function(){
+            alert(222);
+        } ;                  //会覆盖
+    </script>
+</head>
+<body>
+<script src=""></script>
+
+    <script>
+        //两个都弹出，不会被覆盖
+        $(function(){
+            alert(111);
+        });
+        $(function(){
+            alert(222);
+        });
+
+
+        $(document).ready(function(){
+
+        });
+    </script>
+
+</body>
+</html>
