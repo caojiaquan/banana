@@ -1,0 +1,129 @@
+#nav{
+    width: 1002px;
+    height: 120px;
+    /*background: #ffffff;*/
+    /*background: #cccccc;*/
+    position:relative;
+    margin:0 auto;
+    /*line-height:59px;*/
+}
+#logo{
+    width:188px;
+    height: 48px;
+    position:absolute;
+    /*left:140px*/
+    /*margin-left: 140px;*/
+    top:50%;
+    margin-top:-24px;
+
+}
+#menu{
+    position:absolute;
+    left:352px;
+    top:54px;
+}
+#menu li{
+    float:left;
+    font-size: 10px;
+}
+#menu li a:hover{
+    background:#33beff;
+}
+#menu li span{
+    width:1px;
+    height: 14px;
+    float:right;
+    background:url(../img/search.png) no-repeat;
+    margin-top:2px;
+    margin-right:28px;
+    margin-left:28px;
+}
+#ipt input{
+    width: 132px;
+    height: 30px;
+    float:right;
+    /*margin-right:132px;*/
+    margin-top: 45px;
+}
+#ipt span{
+    width: 10px;
+    height: 12px;
+    position:absolute;
+    top:58px;
+    right:8px;
+    background-image: url(../img/search.png);
+    /*backgroud-image:url() no-repeat;*/
+    background-position: -1px 0;
+}
+#banner{
+    /*width:100%;*/
+    height: 460px;
+    background: url(../img/bg.png);
+    /*position:relative;*/
+}
+#banner-contain{
+    width:1002px;
+    height: 460px;
+    position:relative;
+    margin: 0 auto;
+}
+#banner .arrows{
+    width: 29px;
+    height: 50px;
+    position:absolute;
+    top:50%;
+    margin-top: -25px;
+
+}
+#banner .prev{
+    background:url(../img/arrows.png);
+}
+#banner .next{
+    background: url(../img/arrows.png) -29px 0;
+    position:absolute;
+    right: 0;
+}
+#banner-img img{
+    position:absolute;
+    left:150px;
+}
+#news-main{
+    height: 492px;
+    display:-webkit-box;
+}
+#first{
+    width: 102px;
+    height: 102px;
+    background:url(../img/content.png) no-repeat 2px 0;
+    margin:0 auto;
+}
+#second{
+    width: 102px;
+    height: 102px;
+    background:url(../img/content.png) no-repeat -99px 0;
+    margin:0 auto;
+}
+#third{
+    width: 102px;
+    height: 102px;
+    background:url(../img/content.png) no-repeat -200px 0;
+    margin:0 auto;
+}
+#news-main .news-submain{
+    -webkit-box-flex: 1;
+    position:relative;
+}
+#news-main .news-submain li:first-child{
+    text-align: center;
+    font-size:30px;
+    margin-top:86px;
+    margin-bottom:32px;
+}
+#news-main .news-submain li:nth-child(3){
+    margin-top:20px;
+    text-align: center;
+}
+
+
+
+
