@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+
+
+    //  1. 深拷贝
+    var a = {};
+    a.name = 'zhangsan';
+    a.age = 19;
+    a.sort = {
+        math:90,
+        chinese:80,
+    }
+    function copy(a,c){
+        for(var i in a){
+            if(c[i] instanceof (Array || Object)){
+                copy(c[i]);
+            }else{
+                c[i] = a[i];
+            }
+        }
+        return c;
+
+    }
+    var c = {};
+    var result = copy(a,c);
+    result.sort.math = 100;
+    console.log(a.sort.math);
+</script>
+</body>
+</html>
