@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+
+</head>
+<style>
+
+    /*
+
+     */
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    ul,ol{
+        list-style:none;
+    }
+    h1{
+        width: 750px;
+        height: 50px;
+        background: #cccccc;
+        margin:10px auto;
+        text-align:center;
+        line-height:50px;
+        /*margin-bottom:10px;*/
+    }
+    aside{
+        width:750px;
+        height: 300px;
+        margin:0 auto;
+    }
+    figure{
+        width: 750px;
+        background:url(2.jpg);
+        height: 500px;
+        margin:0 auto;
+    }
+
+
+    #left{
+        background: #ff0000;
+        width: 400px;
+        height: 300px;
+        float:left;
+        /*margin-right:50px;*/
+
+    }
+    #right{
+        background: deepskyblue;
+        width: 300px;
+        height: 300px;
+        float:right;
+    }
+    footer{
+        clear:both;
+    }
+    @media (max-width: 750px){
+        h1{
+            width:100%;
+        }
+        section,aside{
+            width: 100%;
+        }
+        #left{
+            width: 67%;
+        }
+        #right{
+            width: 30%;
+        }
+        figure{
+            width: 100%;
+            background-size:100%;
+            padding-top:67%;
+            height:0;
+        }
+    }
+    @media (max-width:250px){
+        h1{
+            width: 100%;
+        }
+        figure{
+            background: url(1.jpg);
+            width:100%;
+            padding-top:50%;
+        }
+        #left,#right{
+            width: 100%;
+        }
+    }
+</style>
+<body>
+    <header>
+        <h1>页头</h1>
+    </header>
+    <nav>
+        <h1>导航</h1>
+    </nav>
+    <figure>
+        <!--<img src="2.jpg" alt=""/>-->
+    </figure>
+    <section>
+        <aside>
+            <p id="left">
+                haha哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+                haha哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+                haha哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+                haha哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+                哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+            </p>
+            <p id="right">lili啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦
+                ili啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦
+                ili啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦
+                ili啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+        </aside>
+    </section>
+    <footer>
+        <h1>页脚</h1>
+    </footer>
+</body>
+</html>
