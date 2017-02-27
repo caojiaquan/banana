@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+    <div id="div1">
+
+    </div>
+    <script>
+        var oDiv1 = document.getElementById('div1');
+        var str = "个人博客  记录点滴生活";
+        var arr = str.split("");
+        var str2 = "";
+        var timer = setInterval(function(){
+            str2 = arr.shift();
+            oDiv1.innerHTML += str2;
+            if(arr.length == 0){
+                clearInterval(timer);
+            }
+        },200) ;
+    </script>
+</body>
+</html>
