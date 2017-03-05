@@ -1,0 +1,195 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul,ol,li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+img{
+    border:0;
+}
+body,html{
+    width: 100%;
+    height: 100%;
+    font-size:16px;
+    background:url(//i.gtimg.cn/qzone/space_item/orig/3/72019_top.webp);
+    /*background-position: -400px 40px;*/
+}
+.clearfix::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+#title{
+    width:100%;
+    height:40px;
+    color:white;
+    background:#f0ad4e;
+}
+#title li{
+    height:40px;
+    float:left;
+    margin:0 4%;
+    line-height:40px;
+    border-bottom:1px solid #00ff00;
+}
+#title li:first-child{
+    margin:0 13% 0 16%;
+}
+#welPage{
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    font-family: webfont arial, georgia, verdana, simsun, helvetica, sans-serif;
+    font-size:30px;
+    color:white;
+    transition:all 1s ease;
+    background:url(../images/1.jpg) no-repeat center;
+    z-index: 9999;
+}
+@font-face {font-family: 'webfont';
+    src: url('//at.alicdn.com/t/s4h27k2rlosi3sor.eot'); /* IE9*/
+    src: url('//at.alicdn.com/t/s4h27k2rlosi3sor.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('//at.alicdn.com/t/s4h27k2rlosi3sor.woff') format('woff'), /* chrome、firefox */
+    url('//at.alicdn.com/t/s4h27k2rlosi3sor.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('//at.alicdn.com/t/s4h27k2rlosi3sor.svg#思源黑体-极细') format('svg'); /* iOS 4.1- */
+}
+#text{
+    position:absolute;
+    top: 200px;
+    left: 37%;
+}
+#text2{
+    position:absolute;
+    left:34%;
+    top: 250px;
+}
+#welPage-icon{
+    width: 70px;
+    position:absolute;
+    left:47%;
+    bottom:30px;
+    transition:all 1s ease-in;
+}
+#welPage-icon{
+    animation:animations 1s ease infinite;
+    cursor:pointer;
+}
+@keyframes animations{
+    from{
+        bottom:50px;
+    }to{
+        bottom:60px;
+         }
+}
+#banner{
+    width: 908px;
+    height: 190px;
+    margin:0 auto;
+    position:relative;
+}
+#banner img{
+    width:120px;
+    height: 120px;
+    border-radius: 2px;
+    position:absolute;
+    left: 0;
+    bottom:-30px;
+    border:3px solid white;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.5);
+}
+#nav{
+    width: 100%;
+    height: 50px;
+    /*background:rgba(0,0,0,.1);*/
+
+}
+#nav .wapper{
+    width: 908px;
+    height: 50px;
+    margin:0 auto;
+    line-height:50px;
+}
+#nav li:first-child{
+    margin-left:200px;
+}
+#nav li{
+    float:left;
+    /*color:white;*/
+    margin-right:20px;
+    cursor:pointer;
+}
+#news{
+    width: 908px;
+    margin:0 auto;
+    display:-webkit-box;
+    color:#a6a6a6;
+}
+#news-first{
+    width:168px;
+    margin-right:20px;
+}
+#news-first ul{
+    width: 168px;
+    height: 200px;
+}
+#news-first ul li{
+    width: 100%;
+    height: 30px;
+    line-height:30px;
+
+}
+#news-second {
+    -webkit-box-flex: 1;
+}
+
+#news-second input{
+    width: 100%;
+    height: 50px;
+}
+#news ul{
+    background: #122b40;
+}
+/*    /*
+    <div id="banner">
+
+        <img src="images/me.jpg" alt=""/>
+    </div>
+<div id="nav">
+        <div class="wapper">
+            <li>主页</li>
+            <li>相册</li>
+            <li>留言板</li>
+            <li>分享</li>
+            <li>日记</li>
+            <li>美女</li>
+        </div>
+    </div>
+    <div id="news">
+        <div id="news-first">
+            <ul class="news-bg">
+                <li>666<br/>留言</li>
+                <li>666<br/>相册</li>
+                <li>666<br/>生活</li>
+            </ul>
+            <ul class="news-bg">
+
+            </ul>
+        </div>
+        <div id="news-second">
+            <ul class="news-bg">
+                <input type="text"/>
+                <span>haha</span>
+                <span>hehe</span>
+                <span>hoho</span>
+            </ul>
+        </div>
+    </div>*/
+
+
+
