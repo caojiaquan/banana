@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    function A(){
+        this.name = 'lisi';
+        this.age = 18;
+    }
+    A.prototype.sayHello = function(){
+        console.log('sayHello');
+    };
+    function B(){
+        A.call(this);
+    }
+    B.prototype = new A();
+    B.prototype.constructor = B;
+    var obj = new B();
+    console.log(obj.name);
+
+//    var obj1 = new A();
+//    console.log(obj1.name);
+//    obj1.sayHello();
+
+</script>
+</body>
+</html>
