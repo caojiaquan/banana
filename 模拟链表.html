@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    function CreateNode(data,pre,next){
+        this.data = data;
+        this.preNode = pre;
+        if(this.preNode){
+            pre.nextNode = this;
+        }
+        this.nextNode = next;
+    }
+    CreateNode.prototype.print = function(){
+        if(this.nextNode){
+            return this.data.name +" -》 " +  this.nextNode.print();
+        }else{
+            return this.data.name
+        }
+    };
+    CreateNode.prototype.insert = function(node){
+        if(this.nextNode && this.nextNode.preNode){
+            this.nextNode.preNode = node;
+        }
+        node.nextNode = this.nextNode;
+        node.preNode = this;
+        this.nextNode = node;
+    }
+
+    var node1 = new CreateNode({name:'lisi'},null,null);
+    var node2 = new CreateNode({name:'zhangsan'},node1,null)
+
+    var aa = node1.print();
+    console.log(aa);
+</script>
+</body>
+</html>
